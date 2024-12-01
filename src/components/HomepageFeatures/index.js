@@ -17,7 +17,7 @@ const FeatureList = [
         Learn how to set up, customize, and run your own instance of YAFFA budget app
       </>
     ),
-    url: '/resources/installation',
+    url: '/resources/category/installation',
   },
   {
     title: 'First steps',
