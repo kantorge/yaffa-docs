@@ -1,4 +1,5 @@
 import globalData from '@site/src/globalData';
+import Link from '@docusaurus/Link';
 
 # Accounts
 
@@ -40,7 +41,7 @@ The following fields are available when creating a new account:
 * **Active** - Whether the account is active or not. If you uncheck this checkbox, the account will be marked as inactive and will not be visible in the list of accounts, e.g. when you record transactions. This is useful for accounts that you no longer use, but you don't want to delete them.
 * **Opening balance** - The initial balance of the account, which will be used to calculate the account balance at any later time. This field is required, and should be set based on the balance of the account at the time you start using YAFFA.
 * **Account group** - The account group to which the account belongs. This field is required, and you can select an existing account group. It's useful for grouping accounts together for easier management and reporting.
-    * See the [Account groups](./account-groups) feature for more information.
+    * See the <Link to="../account-groups">Account groups</Link> feature for more information.
 * **Currency** - The currency of the account. This field is required, and you can select from the list of available currencies. It's used to display any amounts related to the account in the correct currency, and also to determine when a currency conversion happens.
 * **Import alias** - This is an optional field that can be used to provide alternative names for the account. It is used by the AI receipt processing to help identify the account to which a transaction belongs with more flexibility.
 

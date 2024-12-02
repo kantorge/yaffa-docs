@@ -47,7 +47,7 @@ This guide will help you install YAFFA on your Windows machine using XAMPP. XAMP
 
 * Open the .env file with a text editor of your choice, and make the following settings as a minimum:
     * Set the database connection parameters according to the values you have used to create the MySQL user and database. Use the `DB_DATABASE`, `DB_USERNAME` and `DB_PASSWORD` settings accordingly.
-    * Review the APP_URL, if you would like to use something else than http://yaffa.test to access YAFFA from your browser.
+    * Review the APP_URL, if you would like to use something else than `http://yaffa.test` to access YAFFA from your browser.
 
 ## 5. Set the selected host by editing the hosts file
 

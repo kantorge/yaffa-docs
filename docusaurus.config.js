@@ -16,7 +16,7 @@ const config = {
   url: 'https://www.yaffa.cc',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/documentation/',
-
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -49,8 +49,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // TODO: add your project's social card
+      // image: 'img/docusaurus-social-card.jpg',
       imageZoom: {
         selector: '.markdown img.zoomable',
         // Optional medium-zoom options
@@ -69,7 +69,7 @@ const config = {
         },
         items: [
           {
-            href: 'http://www.yaffa.cc/',
+            href: 'https://www.yaffa.cc/',
             label: 'YAFFA Homepage',
             position: 'left',
             target: '_self',
