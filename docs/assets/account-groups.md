@@ -35,7 +35,7 @@ To add a new account group, click the **New account group** button in the Action
 
 ![Screenshot of the 'Add account group' form](/img/accountgroups-add.png)
 
-At the moment, the only available field is the **Name** field, which is required. Enter a name for the new account group and click the **Save** button to create it. No other properties are reuired and used by this feature.
+At the moment, the only available field is the **Name** field, which is required. Enter a name for the new account group and click the **Save** button to create it. No other properties are required and used by this feature.
 
 :::note
 

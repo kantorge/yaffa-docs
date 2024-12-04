@@ -1,9 +1,10 @@
 import globalData from '@site/src/globalData';
-import Link from '@docusaurus/Link';
 
 # Accounts
 
-**Accounts** are one of the fundamental building blocks of YAFFA, which will be used in various features, especially during recording financial transactions. An account represents a financial entity, such as a bank account, credit card, or cash.
+**Accounts** are one of the fundamental building blocks of YAFFA, which will be used in various features, especially during recording financial transactions.
+A financial transaction is always associated with an account, which represents the source or destination of the money involved in the transaction.
+An account is most often as a bank account, a credit card, your wallet, or an investment account.
 
 import StandardTransactionForm from '/img/transaction-form-standard-withdrawal-full-empty.png';
 
@@ -37,12 +38,13 @@ To add a new account, click the **New account** button in the Actions toolbar. T
 ![Screenshot of the 'Add account' form](/img/accounts-add.png)
 
 The following fields are available when creating a new account:
-* **Name** - The name of the account. This field is required and must be unique. You'll use this name to identify the account in various features.
+* **Name** - The name of the account. This field is required and must be unique among your accounts. You'll use this name to identify the account in various features.
 * **Active** - Whether the account is active or not. If you uncheck this checkbox, the account will be marked as inactive and will not be visible in the list of accounts, e.g. when you record transactions. This is useful for accounts that you no longer use, but you don't want to delete them.
 * **Opening balance** - The initial balance of the account, which will be used to calculate the account balance at any later time. This field is required, and should be set based on the balance of the account at the time you start using YAFFA.
 * **Account group** - The account group to which the account belongs. This field is required, and you can select an existing account group. It's useful for grouping accounts together for easier management and reporting.
-    * See the <Link to="../account-groups">Account groups</Link> feature for more information.
+    * See the [Account groups](../account-groups) feature for more information.
 * **Currency** - The currency of the account. This field is required, and you can select from the list of available currencies. It's used to display any amounts related to the account in the correct currency, and also to determine when a currency conversion happens.
+    * See the [Currencies](../currencies) feature for more information.
 * **Import alias** - This is an optional field that can be used to provide alternative names for the account. It is used by the AI receipt processing to help identify the account to which a transaction belongs with more flexibility.
 
 :::tip
