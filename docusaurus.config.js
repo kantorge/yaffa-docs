@@ -79,7 +79,7 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'documentationSidebar',
             position: 'left',
             label: 'Documentation',
           },

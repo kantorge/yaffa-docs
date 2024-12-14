@@ -1,0 +1,8 @@
+{
+  "label": "Other resources",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "These topics are not directly related to YAFFA, but they can help you to get started easier."
+  }
+}
