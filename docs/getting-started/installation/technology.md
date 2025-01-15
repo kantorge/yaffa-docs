@@ -22,6 +22,10 @@ LAMP and LEMP are similar software stacks for Linux, consisting of Apache or Ngi
 
 This stack can be used on other devices as well, such as Raspberry Pi. We have a step by step guide on how to install YAFFA on a Raspberry Pi, which you can find [here](./install-yaffa-on-a-raspberry.md). You can find various other guides on the internet on how to set up a LAMP or LEMP stack on different Linux distributions. For our brief guide on how to get started with LEMP on a Raspberry Pi, see [this guide](../../../other-resources/install-lemp-on-a-raspberry).
 
+### Docker
+
+Docker is a platform for developing, shipping, and running applications in containers. It allows users to install and run applications in isolated environments, which can be easily shared and moved between different computers. This makes it a great choice for running YAFFA on your computer, as it provides a consistent environment for the application, without the need to install all the dependencies on your host machine. Docker will take care of the server environment required to run YAFFA.
+
 ## Detailed requirements
 
 In order to run YAFFA, you need to have the following software installed:

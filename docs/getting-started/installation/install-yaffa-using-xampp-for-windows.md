@@ -6,7 +6,7 @@ sidebar_position: 2
 
 This guide will help you install a basic working instance of YAFFA on your Windows machine using XAMPP.
 
- XAMPP is a software stack for Windows, consisting of Apache, MySQL, PHP. At this point, we assume that you have already installed XAMPP on your computer. You can read about the environment requirements in the [Technology stack](./technology.md) guide.
+XAMPP is a software stack for Windows, consisting of Apache, MySQL, PHP. At this point, we assume that you have already installed XAMPP on your computer. You can read about the environment requirements in the [Technology stack](./technology.md) guide.
 
 ## 1. Start your XAMPP environment
 
