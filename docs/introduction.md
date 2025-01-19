@@ -1,5 +1,8 @@
 ---
+title: Meet YAFFA personal finance application
+sidebar_label: Introduction
 sidebar_position: 1
+description: Learn about YAFFA personal finance application, its features, and how to use it to track your income and expenses.
 ---
 
 # Introduction

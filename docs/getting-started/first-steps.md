@@ -1,5 +1,8 @@
 ---
+title: Take Your First Steps to Manage Your Finances
+sidebar_label: First Steps
 sidebar_position: 3
+description: Learn how to get started with YAFFA personal finance application, and take your first steps to manage your finances with ease.
 ---
 
 import globalData from '@site/src/globalData';

@@ -1,3 +1,9 @@
+---
+title: Manage Multi-Currency Finances with Ease
+sidebar_label: Currencies
+description: Learn about currencies in YAFFA personal finance application, and how to use them to manage multi-currency finances.
+---
+
 import globalData from '@site/src/globalData';
 
 # Currencies

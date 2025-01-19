@@ -1,3 +1,9 @@
+---
+title: Organize and Simplify Your Financial Overview with Account Groups
+sidebar_label: Account groups
+description: Learn about account groups in YAFFA personal finance application, and how to use them to organize your financial overview.
+---
+
 import globalData from '@site/src/globalData';
 
 # Account groups

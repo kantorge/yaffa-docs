@@ -1,5 +1,8 @@
 ---
+title: Automatically Download Investment Prices
+sidebar_label: Download investment prices
 sidebar_position: 4
+description: Learn how to automatically download the latest prices of your investments in YAFFA personal finance application.
 ---
 
 # Download Investment Prices

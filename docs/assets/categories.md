@@ -1,3 +1,9 @@
+---
+title: Track Spending and Manage Budgets with Categories
+sidebar_label: Categories
+description: Learn about categories in YAFFA personal finance application, and how to use them to track your spending and manage budgets.
+---
+
 import globalData from '@site/src/globalData';
 
 # Categories

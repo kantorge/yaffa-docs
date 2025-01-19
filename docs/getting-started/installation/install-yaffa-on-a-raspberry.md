@@ -1,5 +1,8 @@
 ---
+title: Install and Configure YAFFA on Raspberry Pi
+sidebar_label: Install YAFFA on a Raspberry Pi
 sidebar_position: 3
+description: Learn how to install and configure YAFFA on a Raspberry Pi with a LEMP stack, and start managing your finances with ease.
 ---
 
 # Install and Configure YAFFA on Raspberry Pi
@@ -83,7 +86,7 @@ import Step5ComposerPackagesInstalled from '/img/raspberry-pi-yaffa/5-composer-p
 
 ## 4. Configure YAFFA
 
-As any Laravel application, YAFFA needs to be configured to work with your environment. This includes setting up the database connection, application key, and other settings. This guide covers the base configuration, but you can find more advanced settings in the `.env` file. Some of these are also covered in the [Advanced settings](/resources/category/advanced-settings/) guide.
+As any Laravel application, YAFFA needs to be configured to work with your environment. This includes setting up the database connection, application key, and other settings. This guide covers the base configuration, but you can find more advanced settings in the `.env` file. Some of these are also covered in the [Advanced settings](../advanced-settings/index.md) guide.
 
 * The settings of YAFFA will be stored in a `.env` file. While still in your YAFFA folder and your terminal, make a copy of the sample `.env` file:
 

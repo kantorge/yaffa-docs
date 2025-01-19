@@ -1,5 +1,8 @@
 ---
+title: Automate Your Financial Tasks with Cron Jobs
+sidebar_label: Cron jobs
 sidebar_position: 2
+description: Learn how to set up cron jobs in YAFFA personal finance application to automate your financial tasks.
 ---
 
 # Cron jobs

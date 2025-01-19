@@ -1,3 +1,9 @@
+---
+title: How to Install the LEMP Stack on a Raspberry Pi
+sidebar_label: Install LEMP on a Raspberry Pi
+description: Learn how to set up a basic LEMP environment on a Raspberry Pi running Raspbian OS, which includes Linux, Nginx, MySQL, and PHP.
+---
+
 # Install the LEMP Stack on Raspberry Pi
 
 This guide will help you set up a basic **LEMP environment** (Linux, Nginx, MySQL, PHP) on a Raspberry Pi running Raspbian OS. The environment will use PHP version 8.3 and MySQL version 8.0, and is intended for local use. This guide contains the minimum required steps to get the LEMP stack running on your Raspberry Pi. For troubleshooting and more advanced configurations, you can refer to the official documentation of the software components or search the internet for more detailed guides.

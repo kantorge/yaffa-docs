@@ -1,5 +1,8 @@
 ---
+title: Create a New Account to Manage Your Finances
+sidebar_label: Registration
 sidebar_position: 2
+description: Learn how to register a new account in YAFFA personal finance application, and start managing your finances with ease.
 ---
 
 import globalData from '@site/src/globalData';
@@ -25,7 +28,7 @@ After you install YAFFA and open the application in your web browser, you will b
 The following fields need to be filled in when registering yourself:
 * **Email** - Your email address, which will be used to log in to the application. This field is required and must be unique among all users.
     * By default, you need to verify your email address before you can log in to the application. This is done by clicking the link in the email that will be sent to you after you submit the registration form.
-    * If you are not able to send emails from your system, or you don't want this verification step on your system, you can disable this feature in the `.env` file during the [installation](/resources/category/installation/).
+    * If you are not able to send emails from your system, or you don't want this verification step on your system, you can disable this feature in the `.env` file during the [installation](../installation).
 * **Name** - Your name, which will be used to identify you in the application. This field is required, but it is used only for display purposes.
 * **Password** and **Password confirmation** - Your password, which will be used to log in to the application. This field is required and must be at least 8 characters long.
 * Please accept the **<a href={globalData.genericURLs.toc} target="_blank">Terms of Service</a>** by checking the checkboxes.

@@ -1,3 +1,9 @@
+---
+title: Get Your Finance Organized With Accounts
+sidebar_label: Accounts
+description: Learn about accounts in YAFFA personal finance application, and how to use them to organize your finances.
+---
+
 import globalData from '@site/src/globalData';
 
 # Accounts
@@ -21,7 +27,10 @@ From a generic perspective, you can read more about <a href={globalData.featureU
 
 **Accounts** can be accessed from the **Assets** menu in the left sidebar. The **Accounts** page displays a list of all your accounts. This page can be used to add new accounts, edit existing ones, or delete accounts that are no longer needed.
 
-![Screenshot of the Accounts list page](/img/accounts-list.png)
+import AccountsList from '/img/accounts-list.png';
+
+<img src={AccountsList} alt="Screenshot of the Accounts list page" className="zoomable" />
+<br /><br />
 
 :::tip
 

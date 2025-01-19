@@ -1,8 +1,0 @@
-{
-  "label": "Advanced settings",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Besides the basic installation steps to get YAFFA up and running, there are some advanced settings that you can configure to better suit your needs. The following sections will guide you through some of the most important settings that you can adjust in the `.env` file, and some additional settings you can make the most out of using YAFFA."
-  }
-}

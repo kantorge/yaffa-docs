@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+title: Install YAFFA personal finance application using XAMPP for Windows
+description: Learn how to install YAFFA personal finance application on your Windows machine using XAMPP.
+sidebar_label: Install YAFFA using XAMPP for Windows
 ---
 
 # Install YAFFA using XAMPP for Windows
@@ -66,7 +69,7 @@ As any Laravel application, YAFFA needs to be configured to work with your envir
     * Set the database connection parameters according to the values you have used to create the MySQL user and database. Use the `DB_DATABASE`, `DB_USERNAME` and `DB_PASSWORD` settings accordingly.
     * Review the APP_URL, if you would like to use something else than `http://yaffa.test` to access YAFFA from your browser.
 
-For a basic setup, you can leave the other settings as they are. You can always come back and adjust them later. For a comprehensive list of settings, refer to the comments and descriptions in the .env.example file, which was added to the installation folder. Some of these are also covered in the [Advanced settings](/resources/category/advanced-settings/) guide.
+For a basic setup, you can leave the other settings as they are. You can always come back and adjust them later. For a comprehensive list of settings, refer to the comments and descriptions in the .env.example file, which was added to the installation folder. Some of these are also covered in the [Advanced settings](../advanced-settings/index.md) guide.
 
 ## 5. Set the selected host by editing the hosts file
 

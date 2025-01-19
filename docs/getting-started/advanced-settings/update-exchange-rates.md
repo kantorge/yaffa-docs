@@ -1,5 +1,8 @@
 ---
+title: Automate Currency Exchange Rates Update
+sidebar_label: Update currency exchange rates
 sidebar_position: 3
+description: Learn how to automate the update of currency exchange rates in YAFFA personal finance application.
 ---
 
 # Update Currency Exchange Rates

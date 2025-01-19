@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: Technology stack required by YAFFA personal finance application
+sidebar_label: Technology stack
+description: Learn about the technology stack required to run YAFFA personal finance application on your computer or server.
 ---
 
 # Technology stack

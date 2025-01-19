@@ -1,3 +1,9 @@
+---
+title: Track Income and Expenses Effectively with Payees
+sidebar_label: Payees
+description: Learn about payees in YAFFA personal finance application, and how to use them to track your income and expenses.
+---
+
 import globalData from '@site/src/globalData';
 
 # Payees

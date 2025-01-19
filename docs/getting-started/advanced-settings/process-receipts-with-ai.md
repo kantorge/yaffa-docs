@@ -1,5 +1,8 @@
 ---
+title: Process Receipts with AI to Automate Your Finances
+sidebar_label: Process receipts with AI
 sidebar_position: 6
+description: Learn how to set up YAFFA personal finance application to process receipts with AI and automate your financial tasks.
 ---
 
 # Process Receipts with AI
