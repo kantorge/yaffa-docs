@@ -31,10 +31,20 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.img-12 {
+  width: 12.5%;
+}
+
 .img-25 {
   width: 25%;
 }
 
 .img-50 {
   width: 50%;
+}
+
+.img-float-right  {
+  float: right;
+  margin-inline-start: 1.5em;
+  display: block;
 }

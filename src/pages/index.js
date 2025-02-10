@@ -14,7 +14,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Documentation, guides, and resources for YAFFA personal finance application
+          Documentation and guides for YAFFA personal finance application
         </Heading>
         <p>Check out the guidelines and instructions about YAFFA personal budget app, to get you started setting up you own application instance, and to make it easy to manage your personal finances.</p>
         <div className={styles.buttons}>
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <Layout
       title="Documentation for YAFFA personal finance application"
-      description="Description will go into a meta tag in <head />">
+      description="Check out the guidelines and instructions about YAFFA personal budget app, to get you started setting up you own application instance, and to make it easy to manage your personal finances.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
