@@ -8,7 +8,7 @@ This guide will help you install a basic working instance of YAFFA on your Windo
 
 Docker is a platform for developing, shipping, and running applications in containers. At this point, we assume that you have already installed Docker and Docker Compose on your computer. This guide uses Windows and Windows Subsystem for Linux (WSL) 2 to run Docker containers.
 
-You can read about the environment requirements in the [Technology stack](./technology.md) guide.
+This Docker-based approach will take of installing the necessary server environment within containers. If needed, you can read about the environment requirements in the [Technology stack](./technology.md) guide.
 
 ## 1. Start your Docker environment
 

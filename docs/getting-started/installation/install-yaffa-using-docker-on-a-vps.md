@@ -7,7 +7,7 @@ description: Learn how to install and configure YAFFA on a VPS using Docker, and
 
 # Install and Configure YAFFA using Docker on a VPS
 
-This article will help you install a working instance of YAFFA on your VPS. It will guide you through the installation of YAFFA web application itself. In this tutorial we'll also apply some advanced configurations to use a custom subdomain and port for the application.
+This article will help you install a working instance of YAFFA on your VPS. It will guide you through the installation of YAFFA web application itself. In this tutorial we'll also apply some advanced configurations to use a custom subdomain and port for the application, and to set up HTTPS to access YAFFA.
 
 This guide uses the following providers for the VPS and other services. (No affiliation with any of the services mentioned.)
 * Google Cloud Platform (GCP) for the VPS, with billing enabled. This is necessary even if you select the free tier of the VM. You can use any other VPS provider, but the steps may vary.
@@ -102,6 +102,12 @@ curl -o docker-compose.yml https://raw.githubusercontent.com/kantorge/yaffa/refs
 curl -o .env https://raw.githubusercontent.com/kantorge/yaffa/refs/heads/main/.env.example
 ```
 
+To set up HTTPS access, you also need a `Caddyfile` to configure Caddy as a reverse proxy. You can download it using the following command.
+
+```bash
+curl -o Caddyfile https://raw.githubusercontent.com/kantorge/yaffa/refs/heads/main/docker/Caddyfile
+```
+
 ### 3.3. Configure YAFFA
 
 As any Laravel application, YAFFA needs to be configured to work with your environment. This includes setting up the database connection, application key, and other settings.
@@ -120,8 +126,11 @@ In this tutorial, we also configure the application to use a custom subdomain an
 
 ```env
 APP_URL=http://yaffa.example.com:8400
+
 SANCTUM_STATEFUL_DOMAINS=yaffa.example.com:8400
 SESSION_DOMAIN=yaffa.example.com
+
+TRUSTED_PROXIES=*
 ```
 
 Once you are done with all changes, save the file and exit the editor.
@@ -143,13 +152,35 @@ import DockerComposePortUpdated from '/img/docker-vps-installation/10-docker-com
 nano docker-compose.yml
 ```
 
-Find the `ports` section of the `app` service and update it to expose the port you have configured in the `.env` file.
+Find the `ports` section of the `app` service and update it to use port 80, without exposing it externally. Caddy will handle the HTTPS traffic and forward it to the application.
 
 ```yaml
 services:
   app:
     ports:
-      - "8400:80"
+      - "80"
+```
+
+Similarly, update the `ports` section of the `caddy` service to expose the custom port 8400 to the host.
+
+```yaml
+  caddy:
+    ports:
+      - "8400:8400"
+```
+
+Finally, you need to adjust the `Caddyfile` to use your domain and subdomain. Open the file in your text editor.
+
+```bash
+nano Caddyfile
+```
+
+Update the sample domain and subdomain to your own, and save the file.
+
+```plaintext
+yaffa.example.com:8400 {
+  reverse_proxy app:80
+}
 ```
 
 ## 4. Start YAFFA
