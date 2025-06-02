@@ -47,6 +47,6 @@ The following fields are available when creating a new category:
 
 :::tip
 
-For inspiration, find some [sample categorization systems](https://www.yaffa.cc/features-of-yaffa-personal-finance-application/categories/sample-categorization-systems/) that you can use as a starting point for your own categories.
+For inspiration, find some [sample categorization systems](https://yaffa.cc/features-of-yaffa-personal-finance-application/categories/sample-categorization-systems/) that you can use as a starting point for your own categories.
 
 :::

@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://www.yaffa.cc',
+  url: 'https://yaffa.cc',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/documentation/',
   trailingSlash: true,
@@ -72,7 +72,7 @@ const config = {
         },
         items: [
           {
-            href: 'https://www.yaffa.cc/',
+            href: 'https://yaffa.cc/',
             label: 'YAFFA Homepage',
             position: 'left',
             target: '_self',
@@ -107,11 +107,11 @@ const config = {
             items: [
               {
                 label: 'Homepage',
-                href: 'https://www.yaffa.cc/',
+                href: 'https://yaffa.cc/',
               },
               {
                 label: 'Features',
-                href: 'https://www.yaffa.cc/features-of-yaffa-personal-finance-application/',
+                href: 'https://yaffa.cc/features-of-yaffa-personal-finance-application/',
               },
               {
                 label: 'Sandbox',
@@ -124,7 +124,7 @@ const config = {
             items: [
               {
                 label: 'Contact Us',
-                to: 'https://www.yaffa.cc/contact/',
+                to: 'https://github.com/kantorge/yaffa/discussions',
               },
               {
                 label: 'GitHub',
