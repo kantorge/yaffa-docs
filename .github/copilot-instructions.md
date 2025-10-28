@@ -60,7 +60,7 @@ cd /home/runner/work/yaffa-docs/yaffa-docs
 npm install  # Takes ~60 seconds, installs 1314 packages
 ```
 
-**Note:** You may see npm audit warnings (26 vulnerabilities as of Oct 2025). These are dependency vulnerabilities and should not be fixed automatically unless specifically requested.
+**Note:** You may see npm audit warnings about vulnerabilities. These are dependency vulnerabilities and should not be fixed automatically unless specifically requested.
 
 ### Available Commands
 
