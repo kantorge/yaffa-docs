@@ -79,7 +79,6 @@ npm run build  # Creates optimized production build
 ```
 - **Duration:** ~20-30 seconds
 - Output: `build/` directory (~7.4MB)
-- **CRITICAL:** Build will fail if image file references have incorrect case
 - Runs webpack compilation for client and server
 - Shows browserslist warning (safe to ignore unless updating is requested)
 - Validates all internal links (throws error on broken links)
@@ -129,7 +128,6 @@ npm run clear  # Removes .docusaurus/ and node_modules/.cache/
 
 - Images in `/static/img/` are referenced in markdown/JSX as `/img/filename.ext`
 - Extension case MUST match exactly (e.g., `.png` vs `.PNG`)
-- Two images had this issue: `xampp-installation-online.PNG` and `xampp-installation-mysql-database.PNG` were renamed to `.png` to fix build errors
 
 **When adding images:**
 1. Use lowercase extensions (`.png`, `.jpg`, not `.PNG`, `.JPG`)
@@ -186,7 +184,7 @@ npm run clear  # Removes .docusaurus/ and node_modules/.cache/
 **Solution:** Kill existing process: `pkill -f "docusaurus"` or use different port
 
 ### Issue: Changes not reflecting in dev server
-**Solution:** 
+**Solution:**
 1. Stop dev server
 2. Run `npm run clear`
 3. Restart with `npm start`
@@ -240,7 +238,5 @@ npm run clear  # Removes .docusaurus/ and node_modules/.cache/
 4. If build fails, fix errors before proceeding
 5. Verify with production server: `npm run serve`
 6. Do not fix unrelated warnings or vulnerabilities unless requested
-
-**File case sensitivity is critical:** When adding or referencing images, ensure exact case match between file names and import statements.
 
 **Trust these instructions:** Only search for additional information if these instructions are incomplete or found to be incorrect. The project structure and build process are straightforward and documented here.
