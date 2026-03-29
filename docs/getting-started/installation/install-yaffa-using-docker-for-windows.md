@@ -10,6 +10,12 @@ Docker is a platform for developing, shipping, and running applications in conta
 
 This Docker-based approach will take of installing the necessary server environment within containers. If needed, you can read about the environment requirements in the [Technology stack](./technology.md) guide.
 
+:::tip
+
+One benefit of the Docker-based installation is that you do not need to install Node.js, npm, or run `npm install` and `npm run build` on your Windows host. The container setup takes care of the application runtime for you.
+
+:::
+
 ## 1. Start your Docker environment
 
 Start Docker Desktop on your computer.
@@ -112,8 +118,9 @@ Note that this will stop the application, its scheduled cron jobs, and the datab
 You now have a working instance of YAFFA, which stores its data in a MySQL database. The MySQL files, logs, and any uploaded content are located in the `yaffa_db` and `yaffa_storage` Docker volumes, respectively.
 
 * If you delete these volumes, you will lose all your data.
-* If you want to back up your YAFFA data, you need to back up the Docker volumes.
+* **To back up your YAFFA data**, please refer to the [Backup YAFFA Docker Volumes](../../other-resources/backup-docker-volumes.md) guide.
+* **To restore from a backup**, please refer to the [Restore YAFFA from Docker Volume Backups](../../other-resources/restore-docker-volumes.md) guide.
 * If you want to keep your data private, you need to secure access to the Docker volumes.
 
-These are not handled by YAFFA or Docker, nor covered by this guide.
+For a production-ready YAFFA instance, regular backups are essential to protect your financial data.
 :::

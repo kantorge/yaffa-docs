@@ -9,6 +9,12 @@ description: Learn how to install and configure YAFFA on a VPS using Docker, and
 
 This article will help you install a working instance of YAFFA on your VPS. It will guide you through the installation of YAFFA web application itself. In this tutorial we'll also apply some advanced configurations to use a custom subdomain and port for the application, and to set up HTTPS to access YAFFA.
 
+:::tip
+
+One advantage of this Docker-based setup is that you do not need to install Node.js, npm, or run the frontend build on the VPS host. The containerized deployment takes care of the application runtime without requiring a separate host-side Vite build.
+
+:::
+
 This guide uses the following providers for the VPS and other services. (No affiliation with any of the services mentioned.)
 * Google Cloud Platform (GCP) for the VPS, with billing enabled. This is necessary even if you select the free tier of the VM. You can use any other VPS provider, but the steps may vary.
 * [noip.com](https://noip.com) for the dynamic DNS service. You can use any similar providers, or any domains and subdomains you own, and can configure the DNS records.
@@ -202,10 +208,11 @@ import YaffaRunningInBrowser from '/img/docker-vps-installation/11-yaffa-login.p
 You now have a working instance of YAFFA, which stores its data in a MySQL database. The MySQL files, logs, and any uploaded content are located in the `yaffa_db` and `yaffa_storage` Docker volumes, respectively.
 
 * If you delete these volumes, you will lose all your data.
-* If you want to back up your YAFFA data, you need to back up the Docker volumes.
+* **To back up your YAFFA data**, please refer to the [Backup YAFFA Docker Volumes](../../other-resources/backup-docker-volumes.md) guide.
+* **To restore from a backup**, please refer to the [Restore YAFFA from Docker Volume Backups](../../other-resources/restore-docker-volumes.md) guide.
 * If you want to keep your data private, you need to secure access to the Docker volumes.
 
-These are not handled by YAFFA or Docker, nor covered by this guide.
+For a production-ready VPS instance, regular automated backups are essential to protect your financial data and ensure business continuity.
 
-Also, the various security settings of the VM, the Docker containers, and the YAFFA application are not covered in this guide. Make sure to take further steps to secure your environment if you plan to use it in production.
+Also, the various security settings of the VM, the Docker containers, and the YAFFA application are not fully covered in this guide. Make sure to take further steps to secure your environment if you plan to use it in production.
 :::

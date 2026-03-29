@@ -7,9 +7,11 @@ description: Learn about the technology stack required to run YAFFA personal fin
 
 # Technology stack
 
-YAFFA is a web application built with PHP, using Laravel framework. It uses a MySQL database to store data. The application is designed to be self-hosted, meaning that you can install it on your own computer or server, and have full control over your data.
+YAFFA is a web application built with PHP, using Laravel framework. It uses a MySQL database to store data.
+The application is designed to be self-hosted, meaning that you can install it on your own computer or server, and have full control over your data.
 
-This also means that in order to run YAFFA, you either need to have a web server with PHP and MySQL installed, or you need to have this environment set up on your local computer. Some of the features, like processing receipts with AI, require the ability to receive emails by the application, which can be better achived on a server than on a local machine.
+This also means that in order to run YAFFA, you either need to have a web server with PHP and MySQL installed, or you need to have this environment set up on your local computer.
+Some of the features, like receiving and processing email receipts with AI, require the ability to receive emails by the application, which can be better achived on a server than on a local machine.
 
 ## Possible environments to run YAFFA
 
@@ -33,9 +35,9 @@ Docker is a platform for developing, shipping, and running applications in conta
 
 In order to run YAFFA, you need to have the following software installed:
 * A web server with PHP support (Apache, Nginx, etc.)
-* PHP 8.3 or later
+* PHP 8.4 or later
 * MySQL 8.0 or later
-    * Alternatively, you can use MariaDB 10.5 or later, but this engine is not throughly tested
+    * Alternatively, you can use MariaDB 10.5 or later, but this engine is not thoroughly tested
 * The following PHP extensions need to be installed and enabled, as they are required by Laravel:
     * Ctype PHP Extension
     * cURL PHP Extension
@@ -51,4 +53,8 @@ In order to run YAFFA, you need to have the following software installed:
     * Tokenizer PHP Extension
     * XML PHP Extension
 * Composer
-* Cron job support (optional, but recommended)
+* NPM (Node Package Manager) and Node.js to build the frontend assets
+* Cron job support
+* Tool to run Laravel's queue worker, such as Supervisor
+
+As mentioned before, you can use Docker to run YAFFA without having to install all the dependencies on your host machine. The Docker-based approach will take care of installing the necessary server environment within containers. For step by step instructions on how to install YAFFA using Docker, see the [Install YAFFA using Docker for Windows](./install-yaffa-using-docker-for-windows.md) guide.

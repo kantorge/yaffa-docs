@@ -7,7 +7,9 @@ description: Learn how to install and configure YAFFA on a Raspberry Pi with a L
 
 # Install and Configure YAFFA on Raspberry Pi
 
-This guide will help you install a basic working instance of YAFFA on your Raspberry Pi. It will guide you through the installation of YAFFA web application itself. This guide assumes that you have already set up your Raspberry Pi with a LEMP stack.
+This guide will help you install a basic working instance of YAFFA on your Raspberry Pi. It will guide you through the installation of YAFFA web application itself. This guide assumes that you have already set up your Raspberry Pi with a LEMP stack, and the tools required to build and configure YAFFA (git, Composer, Node.js and npm). If you haven't done so yet, you can follow our brief guide on how to set up a LEMP stack on a Raspberry Pi [here](../../../other-resources/install-lemp-on-a-raspberry).
+
+If you are comfortable working with Docker, then the majority of the steps in this guide will be taken care of by the Docker-based installation. For step by step instructions on how to install YAFFA using Docker, see the [Install YAFFA using Docker for Windows](./install-yaffa-using-docker-for-windows.md) guide.
 
 :::tip
 
@@ -70,12 +72,24 @@ exit
 
 ## 3. Install packages
 
-Before you can start using YAFFA, you need to install the necessary packages. This includes Composer, which is a dependency manager for PHP, and NPM, which is a package manager for JavaScript. At this point we assume that you have Composer installed.
+Before you can start using YAFFA, you need to install the necessary packages. This includes Composer, which is a dependency manager for PHP, and Node.js with npm, which are required to build YAFFA's frontend assets. At this point we assume that you have Composer installed and that Node.js and npm are available on the Raspberry Pi.
 
 * Install the necessary PHP packages:
 
 ```bash
 composer install --no-dev --no-scripts
+```
+
+* Install the frontend dependencies:
+
+```bash
+npm install
+```
+
+* Build the production frontend assets with Vite:
+
+```bash
+npm run build
 ```
 
 The end result should look like this:
@@ -182,12 +196,168 @@ sudo systemctl reload nginx
 
 ## 8. Test your YAFFA installation
 
-You can now open your browser and navigate to the IP address of your Raspberry Pi, or the domain you have set up in the Nginx configuration. You should see the YAFFA login screen.
+:::success
+
+**Congratulations!** You have successfully installed YAFFA on your Raspberry Pi.
+Open your browser and navigate to the IP address of your Raspberry Pi, or the domain you have set up in the Nginx configuration. You should see the YAFFA login screen.
+
+:::
 
 import Step9YaffaLogin from '/img/raspberry-pi-yaffa/9-yaffa-login.png';
 
 <img src={Step9YaffaLogin} alt="Screenshot of the YAFFA login screen" className="zoomable img-50" />
 
-**Congratulations!** You have successfully installed YAFFA on your Raspberry Pi. You can now log in and start using the application. Enjoy managing your finances with ease! If you encounter any issues, refer to our documentation or reach out to us for assistance.
+Enjoy managing your finances with ease! If you encounter any issues, refer to our documentation or reach out to us for assistance.
 
 For instructions on the first steps to start using YAFFA, please visit the guide on the [registration](../registration.md).
+
+Once you have YAFFA up and running, there are some additional configurations you should complete to enable all the features of the application.
+
+## 9. Additional configuration
+
+### Configure CRON jobs on Linux/Raspberry Pi
+
+YAFFA uses Laravel's built-in task scheduler to execute certain background tasks on a regular basis. These tasks might include updating exchange rates, downloading investment prices, caching certain values, and automatically recording recurring transactions. To enable these features to work properly, you need to set up a cron entry that runs the Laravel scheduler every minute.
+
+The standard Linux cron entry is:
+
+```bash
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+```
+
+On a Raspberry Pi, configure it using the following steps.
+
+#### Step 1: Decide which user should run cron
+
+Run the cron job as the same user that owns and runs your YAFFA files and PHP process (commonly `www-data` or your deployment user).
+
+* If your app files are owned by `www-data`, use that user for the cron entry
+* If your app is managed by a dedicated user, use that user consistently
+
+#### Step 2: Open crontab
+
+Open the crontab for the selected user:
+
+```bash
+crontab -e
+```
+
+If needed for `www-data`:
+
+```bash
+sudo crontab -u www-data -e
+```
+
+#### Step 3: Add the Laravel scheduler entry
+
+Add this line and adjust paths as needed:
+
+```bash
+* * * * * cd /var/www/yaffa && /usr/bin/php artisan schedule:run >> /dev/null 2>&1
+```
+
+Notes:
+
+* Replace `/var/www/yaffa` with your YAFFA installation path
+* Use the absolute PHP binary path (`which php` can help you find it)
+
+#### Step 4: Save and verify cron
+
+Save the crontab and verify the entry is present:
+
+```bash
+crontab -l
+```
+
+For `www-data`:
+
+```bash
+sudo crontab -u www-data -l
+```
+
+You should see the new cron entry listed.
+
+### Configure Queue Workers to run reliably in the background
+
+Using the scheduler, YAFFA will dispatch operations as queued jobs. These jobs are not executed by cron itself. They must be processed by a running queue worker.
+
+The worker command is:
+
+```bash
+php artisan queue:work
+```
+
+On Linux, the recommended reliable approach is running the worker as a `systemd` service so it starts on boot and restarts automatically on failure.
+
+#### Step 1: Create a systemd service file
+
+Create a service definition:
+
+```bash
+sudo nano /etc/systemd/system/yaffa-queue-worker.service
+```
+
+Add the following content and adjust paths / user values for your environment:
+
+```ini
+[Unit]
+Description=YAFFA Laravel Queue Worker
+After=network.target mariadb.service mysql.service
+
+[Service]
+User=www-data
+Group=www-data
+Restart=always
+RestartSec=5
+WorkingDirectory=/var/www/yaffa
+ExecStart=/usr/bin/php artisan queue:work --sleep=3 --tries=3 --max-time=3600
+
+[Install]
+WantedBy=multi-user.target
+```
+
+#### Step 2: Reload systemd and enable the service
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable yaffa-queue-worker
+sudo systemctl start yaffa-queue-worker
+```
+
+#### Step 3: Check service status and logs
+
+```bash
+sudo systemctl status yaffa-queue-worker
+sudo journalctl -u yaffa-queue-worker -f
+```
+
+This confirms that the worker is running and processing jobs.
+
+#### Step 4: Restart workers after deployments or updates
+
+Queue workers are long-lived processes. After updating application code, restart workers so they load fresh code:
+
+```bash
+php artisan queue:restart
+```
+
+`systemd` will automatically start new worker processes after restart signals are handled.
+
+#### Important considerations
+
+* **Cron and queue are both required:** Scheduler-driven queued jobs need both the cron scheduler and at least one running queue worker.
+* **Use absolute paths:** In cron and systemd, always use absolute paths for both the project directory and the PHP executable.
+* **Permissions matter:** The cron user and queue worker user must be able to read the project and write to `storage` and `bootstrap/cache`.
+
+:::info
+
+If scheduled or queued jobs are not executing, verify the following:
+* Cron entry exists for the correct user
+* `yaffa-queue-worker` service is active
+* PHP binary path is correct in both cron and systemd
+* File permissions allow writing to `storage` and `bootstrap/cache`
+* `QUEUE_CONNECTION` is configured as expected in your `.env` file
+
+:::
+
+If you continue to encounter issues, refer to the [Advanced settings](../advanced-settings/index.md) guide or reach out to us for assistance.
