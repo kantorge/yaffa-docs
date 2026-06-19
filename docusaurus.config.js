@@ -38,6 +38,7 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl: 'https://github.com/kantorge/yaffa-docs/edit/main/',
           routeBasePath: '/resources',
+          breadcrumbs: true,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -50,7 +51,16 @@ const config = {
   ],
 
   plugins: [
-    'plugin-image-zoom'
+    'plugin-image-zoom',
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexBlog: false,
+        docsRouteBasePath: '/resources',
+        searchResultLimits: 8,
+      },
+    ],
   ],
 
   themeConfig:
@@ -72,20 +82,37 @@ const config = {
         title: 'YAFFA',
         logo: {
           alt: 'YAFFA Logo - Oinkrange',
-          src: 'img/logo.png',
+          src: 'img/oinkrange-removebg-150x150.png',
         },
         items: [
           {
             href: 'https://yaffa.cc/',
-            label: 'YAFFA Homepage',
+            label: '← Back to yaffa.cc',
+            position: 'left',
+            target: '_self',
+            className: 'navbar-back-link',
+          },
+          {
+            href: 'https://yaffa.cc/features-of-yaffa-personal-finance-application/',
+            label: 'Features',
             position: 'left',
             target: '_self',
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'documentationSidebar',
-            position: 'left',
+            type: 'dropdown',
             label: 'Documentation',
+            position: 'left',
+            items: [
+              {
+                type: 'docSidebar',
+                sidebarId: 'documentationSidebar',
+                label: 'Browse docs',
+              },
+              {
+                to: '/search',
+                label: 'Search docs',
+              },
+            ],
           },
           {
             href: 'https://github.com/kantorge/yaffa',

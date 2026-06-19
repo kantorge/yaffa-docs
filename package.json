@@ -23,6 +23,7 @@
     "@docusaurus/core": "^3.6.3",
     "@docusaurus/plugin-google-tag-manager": "^3.6.3",
     "@docusaurus/preset-classic": "^3.6.3",
+    "@easyops-cn/docusaurus-search-local": "^0.55.2",
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^3.3.0",
