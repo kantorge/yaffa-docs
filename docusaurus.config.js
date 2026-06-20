@@ -6,6 +6,10 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
+const siteOrigin = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:3000'
+  : 'https://yaffa.cc';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'YAFFA',
@@ -37,7 +41,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           editUrl: 'https://github.com/kantorge/yaffa-docs/edit/main/',
-          routeBasePath: '/resources',
+          routeBasePath: '/',
           breadcrumbs: true,
         },
         theme: {
@@ -57,7 +61,7 @@ const config = {
       {
         hashed: true,
         indexBlog: false,
-        docsRouteBasePath: '/resources',
+        docsRouteBasePath: '/',
         searchResultLimits: 8,
       },
     ],
@@ -83,36 +87,28 @@ const config = {
         logo: {
           alt: 'YAFFA Logo - Oinkrange',
           src: 'img/oinkrange-removebg-150x150.png',
+          href: `${siteOrigin}/documentation/`,
+          target: '_self',
         },
         items: [
           {
-            href: 'https://yaffa.cc/',
-            label: '← Back to yaffa.cc',
+            href: `${siteOrigin}/`,
+            label: 'Home',
             position: 'left',
             target: '_self',
             className: 'navbar-back-link',
           },
           {
-            href: 'https://yaffa.cc/features-of-yaffa-personal-finance-application/',
+            href: `${siteOrigin}/features-of-yaffa-personal-finance-application/`,
             label: 'Features',
             position: 'left',
             target: '_self',
           },
           {
-            type: 'dropdown',
+            type: 'docSidebar',
+            sidebarId: 'documentationSidebar',
             label: 'Documentation',
             position: 'left',
-            items: [
-              {
-                type: 'docSidebar',
-                sidebarId: 'documentationSidebar',
-                label: 'Browse docs',
-              },
-              {
-                to: '/search',
-                label: 'Search docs',
-              },
-            ],
           },
           {
             href: 'https://github.com/kantorge/yaffa',
@@ -129,7 +125,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/resources/introduction',
+                to: '/introduction',
               },
             ],
           },
@@ -138,11 +134,11 @@ const config = {
             items: [
               {
                 label: 'Homepage',
-                href: 'https://yaffa.cc/',
+                href: `${siteOrigin}/`,
               },
               {
                 label: 'Features',
-                href: 'https://yaffa.cc/features-of-yaffa-personal-finance-application/',
+                href: `${siteOrigin}/features-of-yaffa-personal-finance-application/`,
               },
               {
                 label: 'Sandbox',

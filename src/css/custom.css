@@ -39,6 +39,11 @@
   text-decoration: underline;
 }
 
+/* DocCardList cards are full-block links — no underline on the icon/title */
+.markdown a.card {
+  text-decoration: none;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   /* Lighter scale so links/accents stay readable on dark backgrounds */
