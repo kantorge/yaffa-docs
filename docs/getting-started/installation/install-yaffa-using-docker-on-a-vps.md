@@ -142,7 +142,7 @@ TRUSTED_PROXIES=*
 Once you are done with all changes, save the file and exit the editor.
 
 You also need change the application key, either manually by editing the `.env` file, or by running the following command in the terminal. This will fill in the `APP_KEY` value in the `.env` file, or overwrite it if it already exists.
-(It assumes, that you are in the `yaffa-docker` directory, and you have OpenSSL installed, which should be the case by default on most Linux/macOS systems.)
+(It assumes, that you are in the `yaffa` directory, and you have OpenSSL installed, which should be the case by default on most Linux/macOS systems.)
 
 ```bash
 grep -q '^APP_KEY=' .env && \
@@ -203,6 +203,14 @@ import YaffaRunningInBrowser from '/img/docker-vps-installation/11-yaffa-login.p
 
 <img src={YaffaRunningInBrowser} alt="Screenshot of YAFFA running in the browser" className="zoomable img-50" />
 <br /><br />
+
+:::caution Keep the `yaffa_storage` named volume
+
+YAFFA keeps its logs, cache, sessions, and (in the future) uploaded files under `/var/www/html/storage` inside the container. The provided `docker-compose.yml` mounts this path as a **named volume** (`yaffa_storage`), which Docker automatically populates from the image — including the required subdirectories and their permissions — on the first run.
+
+Do **not** replace this named volume with a host bind mount (for example `./storage:/var/www/html/storage`) unless you are prepared to manage it yourself. An empty host directory shadows the `storage/framework/{sessions,cache,views}` and `storage/logs` folders that ship inside the image, which leads to errors such as *"There is no existing directory at /var/www/html/storage/logs"* or *"Failed to open stream: No such file or directory"*. If you must use a bind mount, create those subdirectories and set the correct ownership before starting the containers.
+
+:::
 
 :::caution
 You now have a working instance of YAFFA, which stores its data in a MySQL database. The MySQL files, logs, and any uploaded content are located in the `yaffa_db` and `yaffa_storage` Docker volumes, respectively.

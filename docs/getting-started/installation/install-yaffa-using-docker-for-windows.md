@@ -30,7 +30,7 @@ Open a terminal of your choice to proceed with the installation. You can use the
 
 You will download the necessary files to configure and run YAFFA in this directory.
 
-* Create a new directory for YAFFA, for example `yaffa`, and enter it.
+* Create a new directory for YAFFA, for example `yaffa-docker`, and enter it.
 
 ```bash
 mkdir yaffa-docker
@@ -93,6 +93,14 @@ import DockerContainersRunning from '/img/docker-installation/2-docker-container
 <img src={DockerContainersRunning} alt="Screenshot of Docker containers running" className="zoomable img-50" />
 
 During the launch of the containers, Docker will also take care of migrating the database, and creating the necessary tables for YAFFA.
+
+:::caution Keep the `yaffa_storage` named volume
+
+YAFFA keeps its logs, cache, sessions, and (in the future) uploaded files under `/var/www/html/storage` inside the container. The provided `docker-compose.yml` mounts this path as a **named volume** (`yaffa_storage`), which Docker automatically populates from the image — including the required subdirectories and their permissions — on the first run.
+
+Do **not** replace this named volume with a host bind mount (for example `./storage:/var/www/html/storage`) unless you are prepared to manage it yourself. An empty host directory shadows the `storage/framework/{sessions,cache,views}` and `storage/logs` folders that ship inside the image, which leads to errors such as *"There is no existing directory at /var/www/html/storage/logs"* or *"Failed to open stream: No such file or directory"*. If you must use a bind mount, create those subdirectories and set the correct ownership before starting the containers.
+
+:::
 
 ## 6. Access YAFFA
 
