@@ -2,7 +2,7 @@
 title: "Contributor onboarding: run and test YAFFA locally"
 sidebar_label: Contributor onboarding
 sidebar_position: 1
-description: A practical onboarding guide for contributors, including local setup options, testing workflow, and documentation depth guidelines for Windows, macOS, and Linux.
+description: A practical onboarding guide for YAFFA contributors, covering local setup options, testing workflow, and documentation depth for Windows, macOS, and Linux.
 ---
 
 # Contributor onboarding: run and test YAFFA locally

@@ -1,5 +1,5 @@
 ---
-title: Installation instructions for YAFFA personal finance application
+title: Installation Guide for YAFFA Personal Finance App
 sidebar_position: 1
 sidebar_label: Installation
 description: Learn how to install and configure YAFFA personal finance application on your computer or server.

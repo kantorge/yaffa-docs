@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Install YAFFA personal finance application using XAMPP for Windows
+title: Install YAFFA Personal Finance App via XAMPP
 description: Learn how to install YAFFA personal finance application on your Windows machine using XAMPP.
 sidebar_label: Install YAFFA using XAMPP for Windows
 ---
