@@ -44,11 +44,16 @@ const config = {
           routeBasePath: '/',
           breadcrumbs: true,
         },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
         googleTagManager: {
           containerId: 'GTM-WWCL54V',
+        },
+        sitemap: {
+          lastmod: 'date',
+          priority: 0.5,
         },
       }),
     ],
