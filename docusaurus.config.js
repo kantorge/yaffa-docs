@@ -75,8 +75,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // TODO: add your project's social card
-      // image: 'img/docusaurus-social-card.jpg',
+      // Default social card image, reused from the main site's logo so every
+      // documentation page has an og:image even without a per-page override.
+      image: 'https://yaffa.cc/images/logo/oinkrange-removebg.png',
+      // Docusaurus has no built-in og:type; inject it site-wide here.
+      metadata: [{property: 'og:type', content: 'website'}],
       imageZoom: {
         selector: '.markdown img.zoomable',
         // Optional medium-zoom options
@@ -156,7 +159,7 @@ const config = {
             items: [
               {
                 label: 'Contact Us',
-                to: 'https://github.com/kantorge/yaffa/discussions',
+                href: `${siteOrigin}/contact/`,
               },
               {
                 label: 'GitHub',
