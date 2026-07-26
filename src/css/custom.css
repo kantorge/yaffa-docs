@@ -77,6 +77,38 @@
   opacity: 1;
 }
 
+/* Subtle "Try the demo" CTA — an outline pill, not a loud filled button */
+.navbar-cta-link {
+  margin: 0 0.5rem;
+  padding: 0.35rem 1rem !important;
+  border-radius: 9999px;
+  border: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary) !important;
+}
+
+.navbar-cta-link:hover {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base-inverse) !important;
+  text-decoration: none;
+}
+
+/* Footer — same navy used by the main site's footer, in both color modes,
+   with text tuned for contrast against it. */
+.footer--dark {
+  --ifm-footer-background-color: #090e34;
+  --ifm-footer-link-color: #ced4da;
+  --ifm-footer-link-hover-color: #8aafc8;
+  --ifm-footer-title-color: #ffffff;
+}
+
+.footer__copyright a {
+  color: var(--ifm-footer-link-hover-color);
+}
+
+.footer__copyright a:hover {
+  color: #ffffff;
+}
+
 .img-12 {
   width: 12.5%;
 }

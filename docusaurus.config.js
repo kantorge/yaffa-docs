@@ -119,6 +119,18 @@ const config = {
             position: 'left',
           },
           {
+            href: `${siteOrigin}/faq/`,
+            label: 'FAQ',
+            position: 'left',
+            target: '_self',
+          },
+          {
+            href: 'https://sandbox.yaffa.cc/',
+            label: 'Try the demo',
+            position: 'right',
+            className: 'navbar-cta-link',
+          },
+          {
             href: 'https://github.com/kantorge/yaffa',
             label: 'GitHub',
             position: 'right',
@@ -126,39 +138,48 @@ const config = {
         ],
       },
       footer: {
-        style: 'light',
+        style: 'dark',
+        logo: {
+          alt: 'YAFFA Logo - Oinkrange',
+          src: 'img/oinkrange-removebg-150x150.png',
+          href: `${siteOrigin}/`,
+          target: '_self',
+          width: 48,
+          height: 48,
+        },
+        // Mirrors the main site's footer structure (Resources / Get in touch)
+        // so the two properties feel like one product.
         links: [
           {
             title: 'Resources',
             items: [
               {
-                label: 'Documentation',
-                to: '/introduction',
-              },
-            ],
-          },
-          {
-            title: 'YAFFA',
-            items: [
-              {
-                label: 'Homepage',
-                href: `${siteOrigin}/`,
-              },
-              {
                 label: 'Features',
                 href: `${siteOrigin}/features-of-yaffa-personal-finance-application/`,
               },
               {
-                label: 'Sandbox',
+                label: 'Documentation',
+                to: '/introduction',
+              },
+              {
+                label: 'Try YAFFA',
+                href: `${siteOrigin}/try-yaffa-budget-app/`,
+              },
+              {
+                label: 'Demo and Sandbox',
                 href: 'https://sandbox.yaffa.cc/',
               },
             ],
           },
           {
-            title: 'Get Support',
+            title: 'Get in touch',
             items: [
               {
-                label: 'Contact Us',
+                label: 'info@yaffa.cc',
+                href: 'mailto:info@yaffa.cc',
+              },
+              {
+                label: 'Contact',
                 href: `${siteOrigin}/contact/`,
               },
               {
@@ -168,6 +189,7 @@ const config = {
             ],
           },
         ],
+        copyright: `YAFFA - Yet Another Free Financial Application &middot; <a href="${siteOrigin}/privacy-policy/">Privacy policy</a> &middot; <a href="${siteOrigin}/terms-and-conditions/">Terms of service</a>`,
       },
       prism: {
         theme: prismThemes.github,
