@@ -16,7 +16,7 @@ As all the above features are optional, it's up to you if you want to enable the
 
 To enable email sending, you need to configure the email settings in the `.env` file. The following settings are available, and need to be set according to your email provider.
 
-Generally, you can read about the email settings in the Laravel documentation [here](https://laravel.com/docs/12.x/mail#configuration).
+Generally, you can read about the email settings in the [Laravel mail configuration documentation](https://laravel.com/docs/12.x/mail#configuration).
 
 ```env
 # Select the mailer to use. Most likely you want to use SMTP

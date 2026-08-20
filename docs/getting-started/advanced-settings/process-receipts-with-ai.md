@@ -15,7 +15,7 @@ This is one of the most advanced features of YAFFA and requires some setup.
 * You need to bring your own OpenAI API key, and set up billing for your OpenAI account.
 * YAFFA tries to clean up received emails from styling and other unnecessary information before communicating with the OpenAI API, but the content of the email is still sent to them.
 * Experiment with this feature and keep an eye on your OpenAI usage to avoid unexpected costs.
-* YAFFA uses the Laravel Mailbox package to receive emails. You need to have an account with one of the supported email providers described [here](https://beyondco.de/docs/laravel-mailbox/drivers/drivers).
+* YAFFA uses the Laravel Mailbox package to receive emails. You need to have an account with one of the [supported email providers](https://beyondco.de/docs/laravel-mailbox/drivers/drivers).
 * It also assumes that you have full control over the domain of the email address you want to use for this feature. This is necessary to set up the required DNS records for the email provider.
 
 :::
@@ -23,7 +23,7 @@ This is one of the most advanced features of YAFFA and requires some setup.
 This guide below is an example of how to set this up with SendGrid. You can use any other supported email provider, but the setup might differ slightly.
 
 1. Register an account with SendGrid. You can use the free tier for testing.
-2. Set up an MX record for your domain to point to SendGrid. This is necessary for receiving emails. The detailed steps are described [here](https://www.twilio.com/docs/sendgrid/for-developers/parsing-email/setting-up-the-inbound-parse-webhook#set-up-an-mx-record).
+2. Set up an MX record for your domain to point to SendGrid. This is necessary for receiving emails. See [SendGrid's guide on setting up an MX record](https://www.twilio.com/docs/sendgrid/for-developers/parsing-email/setting-up-the-inbound-parse-webhook#set-up-an-mx-record) for the detailed steps.
 3. Head over to SendGrid at https://app.sendgrid.com/settings/parse and add a new record matching your domain.
   * The receiving domain should be your domain, e.g., `your-yaffa-domain.com`
   * The destination URL should be `https://laravel-mailbox:yourpassword@your-yaffa-domain.com/mailbox/sendgrid`

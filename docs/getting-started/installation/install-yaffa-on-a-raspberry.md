@@ -7,7 +7,7 @@ description: Learn how to install and configure YAFFA on a Raspberry Pi with a L
 
 # Install and Configure YAFFA on Raspberry Pi
 
-This guide will help you install a basic working instance of YAFFA on your Raspberry Pi. It will guide you through the installation of YAFFA web application itself. This guide assumes that you have already set up your Raspberry Pi with a LEMP stack, and the tools required to build and configure YAFFA (git, Composer, Node.js and npm). If you haven't done so yet, you can follow our brief guide on how to set up a LEMP stack on a Raspberry Pi [here](../../../other-resources/install-lemp-on-a-raspberry).
+This guide will help you install a basic working instance of YAFFA on your Raspberry Pi. It will guide you through the installation of YAFFA web application itself. This guide assumes that you have already set up your Raspberry Pi with a LEMP stack, and the tools required to build and configure YAFFA (git, Composer, Node.js and npm). If you haven't done so yet, you can follow our [brief guide on how to set up a LEMP stack on a Raspberry Pi](../../../other-resources/install-lemp-on-a-raspberry).
 
 If you are comfortable working with Docker, then the majority of the steps in this guide will be taken care of by the Docker-based installation. For step by step instructions on how to install YAFFA using Docker, see the [Install YAFFA using Docker for Windows](./install-yaffa-using-docker-for-windows.md) guide.
 

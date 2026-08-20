@@ -13,4 +13,4 @@ One of the advanced, but still essential, settings for YAFFA is the configuratio
 * cache certain values to speed up the application,
 * automatically record recurring transactions.
 
-Setting up cron jobs depends on your server environment. The generic guideline in the Laravel documentation is available [here](https://laravel.com/docs/12.x/scheduling#running-the-scheduler).
+Setting up cron jobs depends on your server environment. The generic guideline is available in the [Laravel task scheduling documentation](https://laravel.com/docs/12.x/scheduling#running-the-scheduler).

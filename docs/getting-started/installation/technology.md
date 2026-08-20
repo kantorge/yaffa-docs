@@ -25,7 +25,7 @@ For step by step instructions on how to install YAFFA using XAMPP, see the [Inst
 
 LAMP and LEMP are similar software stacks for Linux, consisting of Apache or Nginx, MySQL and PHP. They are popular choices for setting up web servers on Linux servers or Linux machines.
 
-This stack can be used on other devices as well, such as Raspberry Pi. We have a step by step guide on how to install YAFFA on a Raspberry Pi, which you can find [here](./install-yaffa-on-a-raspberry.md). You can find various other guides on the internet on how to set up a LAMP or LEMP stack on different Linux distributions. For our brief guide on how to get started with LEMP on a Raspberry Pi, see [this guide](../../../other-resources/install-lemp-on-a-raspberry).
+This stack can be used on other devices as well, such as Raspberry Pi. We have a [step by step guide on how to install YAFFA on a Raspberry Pi](./install-yaffa-on-a-raspberry.md). You can find various other guides on the internet on how to set up a LAMP or LEMP stack on different Linux distributions. For our brief guide on how to get started with LEMP on a Raspberry Pi, see [this guide](../../../other-resources/install-lemp-on-a-raspberry).
 
 ### Docker
 

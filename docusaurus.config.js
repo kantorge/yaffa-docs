@@ -80,6 +80,9 @@ const config = {
       image: 'https://yaffa.cc/images/logo/oinkrange-removebg.png',
       // Docusaurus has no built-in og:type; inject it site-wide here.
       metadata: [{property: 'og:type', content: 'website'}],
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
       imageZoom: {
         selector: '.markdown img.zoomable',
         // Optional medium-zoom options
@@ -100,15 +103,18 @@ const config = {
         },
         items: [
           {
+            // `html` (instead of `label`) skips Docusaurus's automatic
+            // "external link" icon/aria-label, which it would otherwise add
+            // to any absolute URL — even this same-origin, same-tab one.
             href: `${siteOrigin}/`,
-            label: 'Home',
+            html: 'Home',
             position: 'left',
             target: '_self',
             className: 'navbar-back-link',
           },
           {
             href: `${siteOrigin}/features-of-yaffa-personal-finance-application/`,
-            label: 'Features',
+            html: 'Features',
             position: 'left',
             target: '_self',
           },
@@ -120,7 +126,7 @@ const config = {
           },
           {
             href: `${siteOrigin}/faq/`,
-            label: 'FAQ',
+            html: 'FAQ',
             position: 'left',
             target: '_self',
           },
@@ -156,6 +162,12 @@ const config = {
               {
                 label: 'Features',
                 href: `${siteOrigin}/features-of-yaffa-personal-finance-application/`,
+                // Same-origin link to the main site, meant to feel internal:
+                // opens in the same tab (overriding Docusaurus's new-tab
+                // default for absolute URLs) and skips the "external link"
+                // icon/aria-label; see src/theme/Footer/LinkItem.
+                target: '_self',
+                internal: true,
               },
               {
                 label: 'Documentation',
@@ -164,6 +176,8 @@ const config = {
               {
                 label: 'Try YAFFA',
                 href: `${siteOrigin}/try-yaffa-budget-app/`,
+                target: '_self',
+                internal: true,
               },
               {
                 label: 'Demo and Sandbox',
@@ -181,6 +195,8 @@ const config = {
               {
                 label: 'Contact',
                 href: `${siteOrigin}/contact/`,
+                target: '_self',
+                internal: true,
               },
               {
                 label: 'GitHub',
