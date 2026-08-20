@@ -114,6 +114,12 @@ To set up HTTPS access, you also need a `Caddyfile` to configure Caddy as a reve
 curl -o Caddyfile https://raw.githubusercontent.com/kantorge/yaffa/refs/heads/main/docker/Caddyfile
 ```
 
+:::tip Using a different reverse proxy?
+
+This guide uses the optional Caddy service from the Docker Compose setup. If you'd rather put YAFFA behind your own reverse proxy (Nginx Proxy Manager, Traefik, nginx, Apache, a cloud load balancer, etc.), see [Running YAFFA behind a custom reverse proxy](reverse-proxy-https.md) to avoid mixed-content errors.
+
+:::
+
 ### 3.3. Configure YAFFA
 
 As any Laravel application, YAFFA needs to be configured to work with your environment. This includes setting up the database connection, application key, and other settings.

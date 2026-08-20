@@ -47,6 +47,17 @@ YAFFA needs to know the URL under which it is accessible. This is important for 
 APP_URL=http://localhost
 ```
 
+### Trusted proxies
+
+If YAFFA runs behind a reverse proxy (a load balancer, Nginx Proxy Manager, Traefik, nginx, Apache, etc.), it needs to know which proxy IPs it can trust to determine the client's real IP address. This is also a prerequisite for YAFFA to trust the proxy's `X-Forwarded-Proto` header and generate correct `https://` URLs — without it, you may see mixed-content errors even though `APP_URL` is set to `https://`.
+
+```env
+# A comma-separated list of trusted proxy IPs/CIDR ranges, or * to trust any proxy.
+TRUSTED_PROXIES=*
+```
+
+If you're putting YAFFA behind your own reverse proxy instead of the Docker Compose setup's optional Caddy service, see [Running YAFFA behind a custom reverse proxy](../installation/reverse-proxy-https.md) for the full setup, including proxy-side configuration.
+
 ### Administrator email
 
 If you configured [outgoing emails](send-emails.md), you can set the email address of the administrator. This email address will receive notifications about users logging in to your YAFFA instance.
